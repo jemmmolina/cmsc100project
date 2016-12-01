@@ -7,7 +7,7 @@ const url = {
 
 
 const route = {
-    login: '/account/login',
+    login: '/authentication/login',
     logout: '/account/logout'
 }
 

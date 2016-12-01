@@ -1,6 +1,6 @@
 <style type="text/css">
     /* body */
-    body {
+    .body {
         background: white;
         display: table;
         padding: 0;
@@ -8,7 +8,7 @@
         width: 100%;
         height: 100%;
     }
-    body .center {
+    .container .center {
         display: table-cell;
         padding-top: 14%;
         padding-bottom: 14%;
@@ -84,7 +84,7 @@
     }
     </style>
 
-   
+<main class="body">
 <div class="container center">
     <!-- login card -->
     <div class="card bordered z-depth-2">
@@ -96,17 +96,20 @@
         <div class="card-content grey lighten-3">
             <center><img src="../assets/images/empty-profile.png" style="height:120px; border-radius:70px;"></center>
             <!-- login form -->
-            <form>
+            <form method="POST" ng-submit="login(formData)" ng-data-model="formData">
                 <!-- username -->
                 <div class="input-field col s12">
-                    <input id="email" type="text" class="validate">
+                    <input id="email" type="text" class="validate" ng-model="formData.email">
                     <label for="email">Email</label>
                 </div>
                 <!-- password -->
                 <div class="input-field col s12">
-                    <input id="password" type="password" class="validate">
+                    <input id="password" type="password" class="validate" ng-model="formData.password">
                     <label for="password">Password</label>
                 </div>
+                                <!-- login button -->
+                <button class="btn waves-effect waves-light light-blue darken-3" id="login" action="submit">Login</button>
+            </form>
                 <!-- sign up -->
                 <div class="input-field col s12 center-align" id="signup">
                     <!-- Modal Trigger -->
@@ -142,11 +145,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- login button -->
-                <div class="input-field col s12 center-align grey lighten-3">
-                    <a href="#" class="btn waves-effect waves-light light-blue darken-3" id="login">Login</a>
-                </div>
-            </form>
         </div>
     </div>
 </div>
+</main>

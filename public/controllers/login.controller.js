@@ -10,21 +10,20 @@
     function LoginCtrl($scope, $location, $cookies, AuthenticationService) {
 
         $scope.formData = {
-            username: '',
+            email: '',
             password: ''
         };
 
 
 
-        $scope.login = (data) => {
-
+        $scope.login = (data) => { // login(formData)
             AuthenticationService
             .login(data)
                 .then((res) => {
-                    
+                    Materialize.toast(res, 3000);
                 })
                 .catch((error) => {
-                    
+                    Materialize.toast(error, 3000);
                 });
 
         };
