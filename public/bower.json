@@ -1,0 +1,24 @@
+{
+  "name": "EIDR-frontend",
+  "homepage": "https://github.com/PJHRobles/EIDR",
+  "authors": [
+    "PJHRobles <joshuahrobles@gmail.com>"
+  ],
+  "description": "frontend for EIDR",
+  "main": "app.js",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.0.0",
+    "Materialize": "materialize#^0.97.6",
+    "angular": "^1.5.7",
+    "angular-route": "^1.5.7",
+    "angular-cookies": "^1.5.7"
+  }
+}

@@ -1,0 +1,15 @@
+node_modules
+.idea
+*/**/*~
+*/**/*.*~
+*.*~
+*~
+dist
+backend/dist
+backend/es6/config/config.js
+public/bower_components
+*/**/*.log
+*/**/*.log*
+*.log
+*.log*
+expect.exp
