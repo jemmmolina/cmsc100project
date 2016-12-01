@@ -52,13 +52,16 @@
                 withCredentials: true
             })
             .then((res) => {
-                    deferred.resolve(res.data);
-                    if (res.data.is_password_valid) {
+                    deferred.resolve(res.data.message);
+                    if (res.data.status === 'Succesfully Logged In!') {
                         $cookies.putObject('data', JSON.stringify(res.data));
                         setCredentials(data.username, res.data.roles);
                     }
+                    else if (res.status === 404) {
+                        Materialize.toast('User does not exist', 3000);
+                    }
                 },(error) => {
-                    deferred.reject(error.data);
+                    deferred.reject(error.data.message);
                 });
 
             return deferred.promise;

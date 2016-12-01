@@ -6,7 +6,6 @@ const db = require(__dirname + '/mysql');
 exports.login = function(req, res, next) {
 
 	function validatelogin() {
-		
 		// If there is a logged in user
 		if (req.session && req.session.user) {
 	        return res.send({ 'message' : 'Already logged in!' });
@@ -16,8 +15,7 @@ exports.login = function(req, res, next) {
 		db.query(query,
 			[req.body.email], 
 			function(err, result) {
-				if (result.length) {
-					// console.log(result);
+				if (result) {
 					checkpassword();
 				}
 				else {
