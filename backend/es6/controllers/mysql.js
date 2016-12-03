@@ -9,7 +9,7 @@ const client = require('mysql'),
 });
 
 db.connect(function(){
-	console.log('Connected!');
+	console.log('Database Connected!');
 });
 
 module.exports = db;
