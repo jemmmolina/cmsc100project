@@ -113,7 +113,8 @@ CREATE TABLE IF NOT EXISTS `user` (
 
 INSERT INTO user(email, password, name) VALUES("jhmolina@up.edu.ph", "justletmein", "Jem Molina"), ("cccassion1@up.edu.ph", "dalekorr", "Clauds Cassion"), ("kdlenon@up.edu.ph", "nishinoya", "Kris Lenon");
 INSERT INTO circle(circleName) VALUES("Family"), ("Churchmates"), ("Elem Friends"), ("HS Friends"), ("College Friends");
-INSERT INTO comment(userId, commentContent) VALUES (1, "yay"), (2, "huhu");
-INSERT INTO commentlikers(commentId, userId) VALUES (1, 1), (1, 2), (2, 1), (2, 2);
-INSERT INTO follower(userId, followerId) VALUES (1, 2), (2, 1);
-INSERT INTO post(userId, postContent) VALUES (1, "hello"), (1, "hi"), (2, "huhu");
+INSERT INTO comment(userId, commentContent) VALUES(1, "yay"), (2, "huhu");
+INSERT INTO commentlikers(commentId, userId) VALUES(1, 2), (2, 1);
+INSERT INTO follower(userId, followerId) VALUES(1, 2), (2, 1);
+INSERT INTO post(userId, postContent) VALUES(1, "hello"), (1, "hi"), (2, "huhu");
+INSERT INTO postlikers(postId, userId) VALUES(1, 2), (2, 1);
