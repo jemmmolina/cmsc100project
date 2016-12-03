@@ -20,11 +20,11 @@ import router from './config/router';
 
 const mysql_session = new MySQLStore(session);
 const store = new MySQLStore({
-    host: 'localhost',
+    host: config[config.ENV].HOST,
     port: '8000',
-    user: 'root',
-    password: 'justletmein',
-    database: 'gminus'
+    user: config[config.ENV].USERNAME,
+    password: config[config.ENV].PASSWORD,
+    database: config[config.ENV].DATABASE
 });
 
 

@@ -110,3 +110,10 @@ CREATE TABLE IF NOT EXISTS `user` (
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+
+INSERT INTO user(email, password, name) VALUES("jhmolina@up.edu.ph", "justletmein", "Jem Molina"), ("cccassion1@up.edu.ph", "dalekorr", "Clauds Cassion"), ("kdlenon@up.edu.ph", "nishinoya", "Kris Lenon");
+INSERT INTO circle(circleName) VALUES("Family"), ("Churchmates"), ("Elem Friends"), ("HS Friends"), ("College Friends");
+INSERT INTO comment(userId, commentContent) VALUES (1, "yay"), (2, "huhu");
+INSERT INTO commentlikers(commentId, userId) VALUES (1, 1), (1, 2), (2, 1), (2, 2);
+INSERT INTO follower(userId, followerId) VALUES (1, 2), (2, 1);
+INSERT INTO post(userId, postContent) VALUES (1, "hello"), (1, "hi"), (2, "huhu");
