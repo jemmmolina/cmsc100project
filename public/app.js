@@ -15,6 +15,11 @@
                 'templateUrl':'views/login.view.html',
                 'caseInsensitiveMatch':true
             })
+            .when('/home', {
+                'controller': 'HomeCtrl',
+                'templateUrl': 'views/home.view.html',
+                'caseInsensitiveMatch': true
+            })
             .otherwise({
                 'redirectTo':'/login'
             });

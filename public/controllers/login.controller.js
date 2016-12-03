@@ -14,16 +14,36 @@
             password: ''
         };
 
-
-
         $scope.login = (data) => { // login(formData)
             AuthenticationService
             .login(data)
                 .then((res) => {
                     Materialize.toast(res, 3000);
+                    if (res === 'Succesfully logged in!') {
+                        $location.url('/home');
+                    }
                 })
                 .catch((error) => {
                     Materialize.toast(error, 3000);
+                });
+
+        };
+
+        $scope.signUp = (data) => { // login(formData)
+            //console.log("SIGN FIRST");
+            AuthenticationService
+            .signUp(data)
+                .then((res) => {
+                    Materialize.toast(res, 3000);
+                    if (res !== 'Incomplete data!') {
+                        $scope.newUserData = {};
+                    }
+                })
+                .catch((error) => {
+                    Materialize.toast(error, 3000);
+                    if (res !== 'Incomplete data!') {
+                        $scope.newUserData = {};
+                    }
                 });
 
         };

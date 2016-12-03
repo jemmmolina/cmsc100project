@@ -70,7 +70,7 @@ app.use(body_parser.urlencoded({ extended: false }));
 app.use(cookie_parser());
 app.use(express.static(config.ASSETS_DIR));
 app.use('/api', router(express.Router()));
-app.use('*', path.public, path.restricted, path.send_file);
+app.use('*', path.send_file);
 app.use(compression());
 
 

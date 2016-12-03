@@ -10,8 +10,8 @@
     }
     .container.center {
         display: table-cell;
-        padding-top: 9%;
-        padding-bottom: 9%;
+        padding-top: 5%;
+        padding-bottom: 5%;
         text-align: inherit;
     }
     .card.bordered {
@@ -86,26 +86,22 @@
 
 <main class="body">
 <div class="container center">
+    <img src="../assets/images/ggminus.png" style="height: 100px; display:block; margin-left:auto; margin-right:auto;">
     <!-- login card -->
     <div class="card bordered z-depth-2">
-        <!-- logo as card header -->
-        <div class="card-header grey lighten-3">
-           <!-- <a href="#" class="black-text"><img class="responsive-img center-align" id="fmslogo" src="assets/images/logo.png" id="fmslogo" align="middle">Google-</a>-->
-            <!-- http://www.mofga.org/Portals/2/Education/Apprenticeship/apprenticeship-logo.jpg -->
-        </div>
         <div class="card-content grey lighten-3">
-            <center><img src="../assets/images/empty-profile.png" style="height:120px; border-radius:70px;"></center>
+            <center><img src="../assets/images/empty-profile.png" style="height:130px; border-radius:55px;"></center>
             <!-- login form -->
             <form method="POST" ng-submit="login(formData)" ng-data-model="formData">
                 <!-- username -->
                 <div class="input-field col s12">
                     <input id="email" type="text" class="validate" ng-model="formData.email">
-                    <label for="email">Email</label>
+                    <label for="email"><i class="tiny material-icons" style="vertical-align:text-top;">email</i>&nbsp;&nbsp;&nbsp;Email</label>
                 </div>
                 <!-- password -->
                 <div class="input-field col s12">
                     <input id="password" type="password" class="validate" ng-model="formData.password">
-                    <label for="password">Password</label>
+                    <label for="password"><i class="tiny material-icons" style="vertical-align:text-top;">lock</i>&nbsp;&nbsp;&nbsp;Password</label>
                 </div>
                 <!-- login button -->
                 <button class="btn waves-effect waves-light light-blue darken-3" id="login" action="submit" style="margin-top: 15px;">Login</button>
@@ -116,33 +112,34 @@
                     <a class="black-text" href="#modal1">No account? Sign up here.</a>
 
                     <!-- Modal Structure -->
-                    <div id="modal1" class="modal" style="width:500px; text-align:left">
+                    <div id="modal1" class="modal" style="width:400px; text-align:left">
                         <div class="modal-content">
-                            <form>
-                                <div class="row" style="padding:15px; color:white; font-size:20px; background:#0277bd; text-align:center;">SIGN UP</div>
-                                <div class="row" style="padding-top:0px;">
+                            <form method="POST" ng-submit="signUp(newUserData)" ng-data-model="newUserData">
+                                <h5 class="white-text" style="background-color:#0277bd; padding:20px; margin: -24px -24px 0px -24px; font-size:20px;"><img src="../assets/images/gminuswhite.png" style="height:40px; vertical-align:middle;padding-right:30%; margin-top:-8px; margin-bottom:20px;" align="left">SIGN UP</h5>
+                                <div class="row" style="margin-bottom: -18px;">
                                     <div class="input-field col s12 m12 l12">
-                                        <input id="fullName" type="text" class="validate">
-                                        <label for="fullName">&nbsp;&nbsp;&nbsp;Full Name</label>
+                                        <input id="fullName" type="text" class="validate" ng-model="newUserData.name" ng-init="newUserData.name=''">
+                                        <label for="fullName">&nbsp;&nbsp;&nbsp;<i class="tiny material-icons" style="vertical-align:text-top;">perm_identity</i>&nbsp;&nbsp;&nbsp;Full Name</label>
                                     </div>
                                 </div>
-                                <div class="row">
+                                <div class="row" style="margin-bottom: -18px;">
                                     <div class="input-field col s12 m12 l12">
-                                        <input id="email" type="text" class="validate">
-                                        <label for="email">&nbsp;&nbsp;&nbsp;Email Address</label>
+                                        <input id="email" type="text" class="validate" ng-model="newUserData.email" ng-init="newUserData.email=''">
+                                        <label for="email">&nbsp;&nbsp;&nbsp;<i class="tiny material-icons" style="vertical-align:text-top;">email</i>&nbsp;&nbsp;&nbsp;Email Address</label>
                                     </div>
                                 </div>
-                                <div class="row">
+                                <div class="row" style="margin-bottom: -18px;">
                                     <div class="input-field col s12 m12 l12">
-                                        <input id="password" type="password" class="validate">
-                                        <label for="password">&nbsp;&nbsp;&nbsp;Password</label>
+                                        <input id="password" type="password" class="validate" ng-model="newUserData.password" ng-init="newUserData.password=''">
+                                        <label for="password">&nbsp;&nbsp;&nbsp;<i class="tiny material-icons" style="vertical-align:text-top;">lock</i>&nbsp;&nbsp;&nbsp;Password</label>
                                     </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button class="modal-action modal-close waves-effect waves-green btn-flat light-blue darken-3 white-text" id="signUp" action="submit">SIGN UP</button>
                                 </div>
                             </form>
                         </div>
-                        <div class="modal-footer">
-                            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat light-blue darken-3 white-text">SIGN UP</a>
-                        </div>
+                        
                     </div>
                 </div>
         </div>

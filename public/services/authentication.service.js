@@ -41,9 +41,9 @@
 
 
         const login = (data) => {
-
+            //console.log("logging in");
             let deferred = $q.defer();
-
+            //console.log($.param(data));
             $http({
                 method: 'POST',
                 url: url.backend + route.login,
@@ -67,11 +67,41 @@
             return deferred.promise;
 
         };
+        const signUp = (data) => {
+            //console.log("signing up");
+            let deferred = $q.defer();
+            console.log($.param(data));
+            $http({
+                method: 'POST',
+                url: url.backend + route.signup,
+                data: $.param(data),
+                headers: headers,
+                withCredentials: true
+            })
+            .then((res) => {
+                    //console.log("1");
+                    deferred.resolve(res.data.message);
+                    if (res.data.status === 'account successfully created!') {
+                        $cookies.putObject('data', JSON.stringify(res.data));
+                        setCredentials(data.username, res.data.roles);
+                    }
+                    else if (res.data.status === 'Password exists!') {
+                        Materialize.toast('Password exists', 3000);
+                    }
+                    else if(res.status === 404){
+                        Materialize.toast('User already exists', 3000);
+                    }
+                },(error) => {
+                    deferred.reject(error.data.message);
+                });
 
+            return deferred.promise;
+
+        };
 
 
         const logout = () => {
-
+            //console.log("LOG OUT");
             let deferred = $q.defer();
 
             $http({
@@ -101,6 +131,7 @@
         service.setCredentials   = setCredentials;
         service.login            = login;
         service.logout           = logout;
+        service.signUp           = signUp;
 
         return service;
     };

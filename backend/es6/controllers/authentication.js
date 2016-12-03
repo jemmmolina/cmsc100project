@@ -5,11 +5,15 @@ const db = require(__dirname + '/mysql');
 exports.login = function(req, res, next) {
 
 	function validatelogin() {
-		
+
 		// If there is a logged in user
 		if (req.session && req.session.user) {
 	        return res.send({ 'message' : 'Already logged in!' });
 	    }
+
+	    if (typeof req.body.email === 'undefined' || typeof req.body.password === 'undefined' || req.body.email === '' || req.body.password === '') {
+			return res.send({'message' : 'Incomplete data!'});
+		}
 
 	    var query = 'SELECT COUNT(*) as count FROM user where email = ? LIMIT 1'
 		db.query(query,
@@ -43,7 +47,7 @@ exports.login = function(req, res, next) {
 					};
 					// req.session.user = user;
 					return res.send({ 
-						'message' : 'Succesfully Logged In!',
+						'message' : 'Succesfully logged in!',
 						'email': req.body.email
 					});
 				}
