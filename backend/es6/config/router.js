@@ -19,14 +19,14 @@ module.exports = function(router) {
 
 	//posts routes
 	router.get ('/posts/viewPosts', posts.viewAllPosts);
-	router.get ('/posts/viewSpecificPosts', posts.viewSpecificPosts);
-	router.get ('/posts/viewPostsByUser', posts.viewPostsByUser);
+	router.get ('/posts/viewSpecificPosts/:postId', posts.viewSpecificPosts);
+	router.get ('/posts/viewPostsByUser/:userId', posts.viewPostsByUser);
 	router.post('/posts/createPost', posts.createPost);
 	router.put ('/posts/updatePost', posts.updatePost);
 	router.del ('/posts/deletePost', posts.deletePost);
 
 	//users routes
-	router.post('/users/searchUser', users.searchUser);
+	router.get('/users/searchUser/:name', users.searchUser);
 
 	//accounts routes
 	router.post('/accounts/createAccount', accounts.createAccount);

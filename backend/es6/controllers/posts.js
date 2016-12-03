@@ -18,7 +18,7 @@ exports.viewSpecificPosts= function(req, res){	//Get
 	var query = "SELECT * FROM post WHERE postId=?"
 	db.query(query,
 		[
-			req.body.postId
+			req.params.postId
 		],
 		function(err, result){
 			if(err)return res.send(err);
@@ -32,7 +32,7 @@ exports.viewPostsByUser= function(req, res){	//Get
 	var query = "SELECT * FROM post WHERE userId=?"
 	db.query(query,
 		[
-			req.body.userId
+			req.params.userId
 		],
 		function(err, result){
 			if(err)return res.send(err);

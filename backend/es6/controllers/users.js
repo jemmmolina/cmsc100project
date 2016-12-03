@@ -4,7 +4,7 @@ const db = require(__dirname + '/mysql');
 
 // Search User
 exports.searchUser = function(req, res){	//Get
-	var nam = "%" + req.body.name + "%"
+	var nam = "%" + req.params.name + "%"
 	console.log(nam)
 
 	var query = "SELECT * FROM user WHERE name LIKE ?"
