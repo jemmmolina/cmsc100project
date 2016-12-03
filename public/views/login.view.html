@@ -118,31 +118,32 @@
                     <!-- Modal Structure -->
                     <div id="modal1" class="modal" style="width:500px; text-align:left">
                         <div class="modal-content">
-                            <form>
+                            <form method="POST" ng-submit="signUp(newUserData)" ng-data-model="newUserData">
                                 <div class="row" style="padding:15px; color:white; font-size:20px; background:#0277bd; text-align:center;">SIGN UP</div>
                                 <div class="row" style="padding-top:0px;">
                                     <div class="input-field col s12 m12 l12">
-                                        <input id="fullName" type="text" class="validate">
+                                        <input id="fullName" type="text" class="validate" ng-model="newUserData.name" ng-init="newUserData.name=''">
                                         <label for="fullName">&nbsp;&nbsp;&nbsp;Full Name</label>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="input-field col s12 m12 l12">
-                                        <input id="email" type="text" class="validate">
+                                        <input id="email" type="text" class="validate" ng-model="newUserData.email" ng-init="newUserData.email=''">
                                         <label for="email">&nbsp;&nbsp;&nbsp;Email Address</label>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="input-field col s12 m12 l12">
-                                        <input id="password" type="password" class="validate">
+                                        <input id="password" type="password" class="validate" ng-model="newUserData.password" ng-init="newUserData.password=''">
                                         <label for="password">&nbsp;&nbsp;&nbsp;Password</label>
                                     </div>
                                 </div>
+                                <div class="modal-footer">
+                                    <button class="modal-action modal-close waves-effect waves-green btn-flat light-blue darken-3 white-text" id="signUp" action="submit">SIGN UP</button>
+                                </div>
                             </form>
                         </div>
-                        <div class="modal-footer">
-                            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat light-blue darken-3 white-text">SIGN UP</a>
-                        </div>
+                        
                     </div>
                 </div>
         </div>

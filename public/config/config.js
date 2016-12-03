@@ -8,9 +8,10 @@ const url = {
 
 const route = {
     login: '/authentication/login',
-    logout: '/account/logout'
+    logout: '/account/logout',
+    signup: '/accounts/createAccount'
 }
-
+ 
 
 const headers = {
     'content-type': 'application/x-www-form-urlencoded'
