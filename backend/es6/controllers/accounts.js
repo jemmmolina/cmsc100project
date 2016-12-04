@@ -7,9 +7,10 @@ exports.createAccount = function(req, res){	//Post
 
 	function addUser(){
 
-		if (typeof req.body.name === 'undefined' || typeof req.body.email === 'undefined' || typeof req.body.password === 'undefined') {
+		if (typeof req.body.name === 'undefined' || typeof req.body.email === 'undefined' || typeof req.body.password === 'undefined' || req.body.email === '' || req.body.password === '') {
 			return res.send({'message' : 'Incomplete data!'});
 		}
+
 		var query = 'SELECT COUNT(*) as count FROM user where email = ? LIMIT 1';
 		db.query(query,
 			[req.body.email],

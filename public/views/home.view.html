@@ -1,59 +1,4 @@
-<style type="text/css"> 
-   .card .card-content .card-title {
-      line-height: 20px;
-    }
-    /* Search Field */
-    .input-field input[type=search] {
-      display: block;
-      line-height: inherit;
-      padding-left: 4rem;
-      width: calc(100% - 4rem);
-    }
-
-    .input-field input[type=search]:focus {
-      background-color: #00bcd4;
-      border: 0;
-      box-shadow: none;
-      color: white;
-    }
-
-    .input-field input[type=search]:focus + label i,
-    .input-field input[type=search]:focus ~ .mdi-navigation-close,
-    .input-field input[type=search]:focus ~ .material-icons {
-      color: black;
-    }
-
-    .input-field input[type=search] + label {
-      left: 1rem;
-    }
-
-    .input-field input[type=search] ~ .mdi-navigation-close,
-    .input-field input[type=search] ~ .material-icons {
-      position: absolute;
-      top: 0;
-      right: 1rem;
-      color: transparent;
-      cursor: pointer;
-      font-size: 2rem;
-    }
-    input[type=search],
-    textarea.materialize-textarea {
-      background-color: transparent;
-      border: none;
-      border-bottom: 1px solid #9e9e9e;
-      border-radius: 0;
-      outline: none;
-      height: 3rem;
-      width: 100%;
-      font-size: 1rem;
-      margin: 0 0 0 0;
-      padding: 0;
-      box-shadow: none;
-      box-sizing: content-box;
-      transition: all 0.3s;
-    }
-</style>
-
+<link rel="stylesheet" type="text/css" href="../assets/css/custom-home.css">
 <main class="grey lighten-2"> 
     <!-- NAV BAR -->
     <div class="navbar-fixed">
@@ -115,14 +60,22 @@
         <div class="col s12 m12 l9">
             <br>
             <div class="row">
-                <div class="col s12 m12 l5">
-                  <div class="card">
+                <div class="col s12 m12 l12" style="padding-right:40px;">
+                  <div class="card" style="line-height:20px; border-radius:8px;">
                     <div class="card-content">
                       <form>
+                        <!--<img src="assets/images/icon.jpg" style="height:35px; border-radius:30px; border:1px solid white; display:inline-block">-->
                         <div class="input-field">
-                          <!--<img src="assets/images/icon.jpg" style="height:35px; border-radius:30px; border:1px solid white">-->
                           <textarea id="whatsnew" class="materialize-textarea"></textarea>
-                          <label for="whatsnew">What's new with you?</label>
+                          <label for="whatsnew">&nbsp;&nbsp;&nbsp;<i class="tiny material-icons" style="vertical-align:middle;">message</i>&nbsp;&nbsp;&nbsp;What's new with you?</label>
+                          <!--<div class="fixed-action-btn horizontal" style="position:relative;">
+                            <a class="btn-floating red"><i class="large material-icons">mode_edit</i></a>
+                            <a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
+                            <a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
+                            <a class="btn-floating green"><i class="material-icons">publish</i></a></li>
+                            <a class="btn-floating blue"><i class="material-icons">attach_file</i></a>
+                          </div>-->
+                          <button class="btn waves-effect waves-light light-blue darken-3" id="login" action="submit" style="margin-top: 5px;margin-left:84%"><i class="small material-icons right" style="vertical-align:middle;padding:0px;">send</i>POST</button>
                         </div>
                       </form>
                     </div>
@@ -131,17 +84,26 @@
             </div>
             <div class="row">
                 <div class="col s12 m12 l5">
-                  <div class="card">
+                  <div class="card" style="line-height:20px;">
                     <div class="card-content">
-                        <img src="../assets/images/icon.jpg" style="height:35px; border-radius:30px; border:1px solid white">
-                        <span class="card-title" style="font-size:14px; font-weight:bold; margin:0px; margin:0px"><a class="" href="">Dalekorr</a></span><br>
-                        <span style="font-size:13px; margin:0px;"><a class="" href="#">Claudine Cassion</a></span>
+                        <img src="../assets/images/icon.jpg" style="height:35px; border-radius:30px; border:1px solid white; vertical-align:middle">
+                        <span class="card-title" style="font-size:14px; font-weight:bold; margin:0px;"><a class="" href="">&nbsp;&nbsp;Claudine Cassion</a></span><br>
+                        <!--<span style="font-size:13px; margin:0px;"><a class="" href="#">Claudine Cassion</a></span>-->
                     </div>
                     <div class="card-image">
                       <img src="../assets/images/1.jpg">
+                      <a href="#"><i class="material-icons circle" style="color:#424242; background-color:#e0e0e0; padding:5px;">exposure_plus_1</i></a>
+                      <a href="#"><i class="material-icons circle" style="color:#424242; background-color:#e0e0e0; padding:5px; margin:5px;">comment</i></a>
                     </div>
                     <div class="card-action" style="padding-top:10px; padding-bottom:10px;">
-                      <a href="#" class="">FOLLOW</a>
+                      <ul>
+                        <li>
+                          <img src="../assets/images/icon.jpg" style="height:35px; border-radius:30px; border:1px solid white; vertical-align:middle">
+                          <span class="" style="font-size:14px; font-weight:bold; margin:0px;"><a class="black-text" href="">&nbsp;&nbsp;Claudine Cassion</a></span>
+                          <br>
+                          <span style="font-size:10px; margin-left:47px; padding-top:-0px;">This is a sample comment.</span>
+                        </li>
+                      </ul>
                     </div>
                   </div>
                 </div>
@@ -149,3 +111,10 @@
         </div>
     </div>
 </main>
+<script type="text/javascript">
+$( document ).ready(function() {
+$('.fixed-action-btn').openFAB();
+  $('.fixed-action-btn').closeFAB();
+  $('.fixed-action-btn.toolbar').openToolbar();
+  $('.fixed-action-btn.toolbar').closeToolbar();
+}</script>

@@ -9,7 +9,8 @@ const url = {
 const route = {
     login: '/authentication/login',
     logout: '/account/logout',
-    signup: '/accounts/createAccount'
+    signup: '/accounts/createAccount',
+    //signuplogin: 'accounts/signUpPlusLogin'
 }
  
 
