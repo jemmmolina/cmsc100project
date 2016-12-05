@@ -1,6 +1,6 @@
 'use strict';
 
-const file_stream_rotator   = require('file-stream-rotator');
+const file_stream_rotator = require('file-stream-rotator');
 
 
 exports.configure_logger = (directory) => {

@@ -1,10 +1,10 @@
 'use strict';
 
 
-import path from 'path';
+const path = require('path');
 
 
-/* 
+/*
  *  copy the content and create a new file named config.js in the config folder
  *  modify development, test, and production objects to match the credentials in
  *  your device
@@ -31,7 +31,7 @@ let config = {
         HOST: 'localhost'
     },
 
-    APP_NAME: 'Project Management System',
+    APP_NAME: 'gminus',
     APP_URL: 'http://localhost:8000',
 
     ENV: 'development',
@@ -46,13 +46,6 @@ let config = {
     LOGS_DIR: path.normalize(__dirname + '/../logs'),
     ASSETS_DIR: path.normalize(__dirname + '/../../../public/')
 };
-
-
-config.DB_URL = [
-                    'postgres://', config[config.ENV].USERNAME, ':',
-                    config[config.ENV].PASSWORD, '@', config[config.ENV].HOST,
-                    '/', config[config.ENV].DATABASE
-                ].join('');
 
 
 module.exports = config;

@@ -1,10 +1,10 @@
-var accounts = require('../controllers/accounts');
-var posts = require('../controllers/posts');
-var circles = require('../controllers/circles');
-var users = require('../controllers/users');
+var users          = require('../controllers/users');
+var posts          = require('../controllers/posts');
+var circles        = require('../controllers/circles');
+var accounts       = require('../controllers/accounts');
 var authentication = require('../controllers/authentication');
 
-module.exports = function(router) {	
+module.exports = function(router) {
 
 	router.del = router.delete;
 
@@ -15,7 +15,7 @@ module.exports = function(router) {
 	router.get ('/circles/viewAllCircles', circles.viewAllCircles);
 	router.post('/circles/createCircle', circles.createCircle);
 	router.put ('/circles/updateCircle', circles.updateCircle);
-	router.del( '/circles/deleteCircle', circles.deleteCircle);
+	router.del ( '/circles/deleteCircle', circles.deleteCircle);
 
 	//posts routes
 	router.get ('/posts/viewPosts', posts.viewAllPosts);
@@ -26,7 +26,7 @@ module.exports = function(router) {
 	router.del ('/posts/deletePost', posts.deletePost);
 
 	//users routes
-	router.get('/users/searchUser/:name', users.searchUser);
+	router.get ('/users/searchUser/:name', users.searchUser);
 
 	//accounts routes
 	router.post('/accounts/createAccount', accounts.createAccount);
@@ -35,6 +35,6 @@ module.exports = function(router) {
 	router.all('*', function (req, res, next) {
 		res.send(404, {message : 'Nothing to do here.'});
 	});
-	
-	return router;	
+
+	return router;
 };

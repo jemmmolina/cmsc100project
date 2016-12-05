@@ -1,21 +1,20 @@
-import pg from 'mysql';
-import morgan from 'morgan';
-import helmet from 'helmet';
-import express from 'express';
-import winston from 'winston';
-import favicom from 'serve-favicon';
-import body_parser from 'body-parser';
-import compression from 'compression';
-import session from 'express-session';
-import cookie_parser from 'cookie-parser';
-import MySQLStore from 'express-mysql-session';
-import method_override from 'method-override';
+const morgan = require('morgan');
+const helmet = require('helmet');
+const express = require('express');
+const winston = require('winston');
+const favicom = require('serve-favicon');
+const body_parser = require('body-parser');
+const compression = require('compression');
+const session = require('express-session');
+const cookie_parser = require('cookie-parser');
+const MySQLStore = require('express-mysql-session');
+const method_override = require('method-override');
 
 
-import path from './config/path';
-import util from './config/util';
-import config from './config/config';
-import router from './config/router';
+const path   = require('./config/path');
+const util   = require('./config/util');
+const config = require('./config/config');
+const router = require('./config/router');
 
 
 const mysql_session = new MySQLStore(session);
@@ -36,7 +35,7 @@ app.set('name', config.APP_NAME);
 
 
 winston.cli();
-winston.level = config.LOG_LEVEL || 'silly'; 
+winston.level = config.LOG_LEVEL || 'silly';
 winston.log('info', 'Starting', config.APP_NAME, 'on', config.ENV, 'environment');
 
 
