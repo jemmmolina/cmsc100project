@@ -25,10 +25,10 @@
         <div class="col s12 m3 l3">
             <ul class="left hide-on-med-and-down" style="padding-left:25px;">
                 <br>
-                <li><a class="black-text" href="#"><i class="material-icons grey-text text-darken-2" style="vertical-align:middle;">home</i>&emsp;&emsp;Home</a></li><br>
-                <li><a class="black-text" href="#"><i class="material-icons grey-text text-darken-2" style="vertical-align:middle;">games</i>&emsp;&emsp;Collections</a></li><br>
+                <li><a class="black-text" href="home.view.html"><i class="material-icons grey-text text-darken-2" style="vertical-align:middle;">home</i>&emsp;&emsp;Home</a></li><br>
+                <li><a class="black-text" href="collections.view.html"><i class="material-icons grey-text text-darken-2" style="vertical-align:middle;">games</i>&emsp;&emsp;Collections</a></li><br>
                 <li><a class="black-text" href="#"><i class="material-icons grey-text text-darken-2" style="vertical-align:middle;">group_work</i>&emsp;&emsp;Communities</a></li><br>
-                <li><a class="black-text" href="#"><i class="material-icons grey-text text-darken-2" style="vertical-align:middle;">account_circle</i>&emsp;&emsp;Profile</a></li><br>
+                <li><a class="black-text" href="profile.view.html"><i class="material-icons grey-text text-darken-2" style="vertical-align:middle;">account_circle</i>&emsp;&emsp;Profile</a></li><br>
                 <li><a class="black-text" href="#"><i class="material-icons grey-text text-darken-2" style="vertical-align:middle;">people</i>&emsp;&emsp;People</a></li><br>
                 <li><a class="black-text" href="#"><i class="material-icons grey-text text-darken-2" style="vertical-align:middle;">notifications</i>&emsp;&emsp;Notifications</a></li><br>
                 <li class="divider"></li>
@@ -90,10 +90,11 @@
                         <span class="card-title" style="font-size:14px; font-weight:bold; margin:0px;"><a class="" href="">&nbsp;&nbsp;Claudine Cassion</a></span><br>
                         <!--<span style="font-size:13px; margin:0px;"><a class="" href="#">Claudine Cassion</a></span>-->
                     </div>
-                    <div class="card-image">
+                    <div class="card-image center">
                       <img src="../assets/images/1.jpg">
-                      <a href="#"><i class="material-icons circle" style="color:#424242; background-color:#e0e0e0; padding:5px;">exposure_plus_1</i></a>
-                      <a href="#"><i class="material-icons circle" style="color:#424242; background-color:#e0e0e0; padding:5px; margin:5px;">comment</i></a>
+                      <span style="font-size:10px;">2&nbsp;</span>
+                      <a href="#"><i class="tiny material-icons circle" style="color:#424242; background-color:#e0e0e0; padding:8px; margin: 10px 0px 10px 0px;">exposure_plus_1</i></a>
+                      <a href="#"><i class="tiny material-icons circle" style="color:#424242; background-color:#e0e0e0; padding:8px; margin: 10px 0px 10px 0px;">comment</i></a>
                     </div>
                     <div class="card-action" style="padding-top:10px; padding-bottom:10px;">
                       <ul>
@@ -102,8 +103,20 @@
                           <span class="" style="font-size:14px; font-weight:bold; margin:0px;"><a class="black-text" href="">&nbsp;&nbsp;Claudine Cassion</a></span>
                           <br>
                           <span style="font-size:10px; margin-left:47px; padding-top:-0px;">This is a sample comment.</span>
+                          <a href="#"><i class="tiny material-icons circle right" style="color:#424242; background-color:#e0e0e0; padding:8px; margin-bottom:10px;">exposure_plus_1</i></a>
                         </li>
+                        <br>
                       </ul>
+                      <hr>
+                        <div class="row" style="padding-top:10px;">
+                          <div class="input-field" style="padding-bottom:0px;">
+                          <img src="../assets/images/icon.jpg" style="height:35px; border-radius:30px; border:1px solid white; vertical-align:middle; margin-right:47px;">
+                            <textarea style="margin-left:47px; width:80%;" id="comment" class="materialize-textarea"></textarea>
+                            <label for="comment">&nbsp;&nbsp;&nbsp;<i class="tiny material-icons" style="vertical-align:middle; margin-left:47px;">comment</i>&nbsp;&nbsp;&nbsp;Write a comment...</label>
+                            <!--<button class="btn waves-effect waves-light light-blue darken-3" id="login" action="submit" style="margin-top: 5px;margin-left:65%"><i class="small material-icons right" style="vertical-align:middle;padding:0px;">send</i>POST</button>-->
+                          </div>
+                        </div>
+                      <hr>
                     </div>
                   </div>
                 </div>

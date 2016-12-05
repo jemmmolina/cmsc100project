@@ -92,3 +92,6 @@ label.active{
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-floating) {
   text-transform: capitalize;
 }
+#comment {
+  border: none;
+}
