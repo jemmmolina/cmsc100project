@@ -17,7 +17,7 @@ exports.login = function(req, res, next) {
 
 	    var query = 'SELECT COUNT(*) as count FROM user where email = ? LIMIT 1'
 		db.query(query,
-			[req.body.email], 
+			[req.body.email],
 			function(err, result) {
 				if (!err && typeof result !== 'undefined'){
 					if (result[0].count !== 0) {
@@ -30,7 +30,7 @@ exports.login = function(req, res, next) {
 				else {
 					return res.status(404).send({ 'message' : 'User does not exist!'});
 					// return res.status(404).send(err);	//{"code":"ER_NOT_SUPPORTED_AUTH_MODE","errno":1251,"sqlState":"08004","fatal":true}
-				} 
+				}
 			});
 	}
 
@@ -47,7 +47,8 @@ exports.login = function(req, res, next) {
 					};
 					req.session.user = user;
 					req.session.save();
-					return res.send({ 
+                    console.log(req.session);
+					return res.send({
 						'message' : 'Succesfully logged in!',
 						'email': req.body.email
 					});
@@ -55,7 +56,7 @@ exports.login = function(req, res, next) {
 				else {
 					return res.send({ 'message' : 'Wrong password!'});
 					// return res.send(result);
-				} 
+				}
 			}
 		);
 	}

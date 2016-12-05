@@ -1,7 +1,7 @@
 'use strict'
 
 module.exports = (req, res, next) => {
-		console.log(req.session);
+    console.log(req.session);
 	if (typeof req.session !== 'undefined' && typeof req.session.user !== 'undefined') {
 		next();
 	}

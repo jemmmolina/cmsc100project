@@ -52,10 +52,8 @@ app.use(session({
     saveUninitialized: false,
     name: config.COOKIE_NAME,
     cookie: {
-        path: '/',
         httpOnly: false,
         secure: false,
-        domain: config.COOKIE_DOMAIN,
         maxAge: 86400000
     }
 }));
