@@ -11,7 +11,6 @@ const MySQLStore = require('express-mysql-session');
 const method_override = require('method-override');
 
 
-const path   = require('./config/path');
 const util   = require('./config/util');
 const config = require('./config/config');
 const router = require('./config/router');
@@ -69,7 +68,9 @@ app.use(body_parser.urlencoded({ extended: false }));
 app.use(cookie_parser());
 app.use(express.static(config.ASSETS_DIR));
 app.use('/api', router(express.Router()));
-app.use('*', path.send_file);
+app.use('*', (req, res, next) => {
+    res.sendFile('index.html', { root: __dirname + '/../../public'});
+});
 app.use(compression());
 
 

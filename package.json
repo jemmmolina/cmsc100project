@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "babel-watch backend/es6/index.js",
+    "start": "./node_modules/nodemon/bin/nodemon.js backend/es6/index.js",
     "test": "mocha backend/es6/test --recursive",
     "database-setup": "./expect.exp"
   },
