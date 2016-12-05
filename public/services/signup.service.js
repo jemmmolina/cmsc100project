@@ -6,9 +6,9 @@
         .factory('SignupService', SignupService);
 
 
-    SignupService.$inject = ['$rootScope', '$http', '$q', '$location', '$cookies', 'Base64'];
+    SignupService.$inject = ['$rootScope', '$http', '$q', '$location', '$cookies'];
 
-    function SignupService($rootScope, $http, $q, $location, $cookies, Base64) {
+    function SignupService($rootScope, $http, $q, $location, $cookies) {
 
         const signup = (data) => {
 

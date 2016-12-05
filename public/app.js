@@ -25,6 +25,11 @@
                 'templateUrl': 'views/profile.view.html',
                 'caseInsensitiveMatch': true
             })
+            .when('/people', {
+                'controller': 'PeopleCtrl',
+                'templateUrl': 'views/people.view.html',
+                'caseInsensitiveMatch': true
+            })
             .otherwise({
                 'redirectTo':'/login'
             });
