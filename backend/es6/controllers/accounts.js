@@ -32,14 +32,14 @@ exports.createAccount = function(req, res){	//Post
 									password: req.body.password
 								};
 								req.session.user = user;
-								return res.send({ 
+								return res.send({
 									'message' : 'Account successfully created!',
 									'email': req.body.email
 								});
 							}
 					});
 
-					
+
 				}
 				else if (result[0].count !== 0) {
 					return res.send({'message' : 'Email already taken!'});
@@ -47,7 +47,7 @@ exports.createAccount = function(req, res){	//Post
 				else {
 					return res.send({ 'message' : 'Unsuccessful registration!'});
 					// return res.send(result);
-				} 
+				}
 			}
 		);
 	}
@@ -61,7 +61,7 @@ exports.viewAllAccounts = function(req, res){	//Get
 	db.query(query,
 		function(err, result){
 			if(err)return res.send(err);
-			res.send(result);	
+			res.send(result);
 	});
 
 };

@@ -23,8 +23,7 @@ const options = {
     user: config[config.ENV].USERNAME,
     password: config[config.ENV].PASSWORD,
     database: config[config.ENV].DATABASE,
-    expiration: 86400000,
-    createDatabaseTable: true
+    expiration: 86400000
 };
 
 let store = new MySQLSession(options);
