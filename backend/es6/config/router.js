@@ -28,7 +28,7 @@ module.exports = function(router) {
 
 	//users routes
 	router.get ('/users/searchUser/:name', middleware, users.searchUser);
-	router.get ('/usrs/getCurrentUser', middleware, users.getCurrentUser);
+	router.get ('/users/getCurrentUser', middleware, users.getCurrentUser);
 
 	//accounts routes
 	router.post('/accounts/createAccount', accounts.createAccount);
