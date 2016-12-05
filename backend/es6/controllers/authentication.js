@@ -45,7 +45,8 @@ exports.login = function(req, res, next) {
 						email: req.body.email,
 						password: req.body.password
 					};
-					// req.session.user = user;
+					req.session.user = user;
+					req.session.save();
 					return res.send({ 
 						'message' : 'Succesfully logged in!',
 						'email': req.body.email

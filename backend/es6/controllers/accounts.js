@@ -31,7 +31,7 @@ exports.createAccount = function(req, res){	//Post
 									email: req.body.email,
 									password: req.body.password
 								};
-								// req.session.user = user;
+								req.session.user = user;
 								return res.send({ 
 									'message' : 'Account successfully created!',
 									'email': req.body.email

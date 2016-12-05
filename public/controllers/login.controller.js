@@ -35,9 +35,9 @@
             .signUp(data)
                 .then((res) => {
                     Materialize.toast(res, 3000);
-                    /*if (res === 'Account successfully created!') {
+                    if (res === 'Account successfully created!') {
                         $location.url('/home');
-                    }*/
+                    }
                     if (res !== 'Incomplete data!') {
                         $scope.newUserData = {};
                     }

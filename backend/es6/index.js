@@ -16,16 +16,18 @@ const config = require('./config/config');
 const router = require('./config/router');
 
 
-const mysql_session = new MySQLStore(session);
-const store = new MySQLStore({
+const MySQLSession = new MySQLStore(session);
+const options = {
     host: config[config.ENV].HOST,
-    port: '8000',
+    port: 3306,
     user: config[config.ENV].USERNAME,
     password: config[config.ENV].PASSWORD,
-    database: config[config.ENV].DATABASE
-});
+    database: config[config.ENV].DATABASE,
+    expiration: 86400000,
+    createDatabaseTable: true
+};
 
-
+let store = new MySQLSession(options);
 let app = express();
 
 
@@ -55,7 +57,7 @@ app.use(session({
         httpOnly: false,
         secure: false,
         domain: config.COOKIE_DOMAIN,
-        maxAge: 60 * 1000 * 60 * 2  // Equivalent to 2 hours
+        maxAge: 86400000
     }
 }));
 
