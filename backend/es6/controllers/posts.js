@@ -85,3 +85,18 @@ exports.deletePost = function(req, res){	//Delete
 	});
 
 };
+
+exports.viewPostLikers= function(req, res){	//Get
+	var query = "SELECT postlikers.postId, COUNT(*) FROM postlikers JOIN post ON postlikers.postId = post.postId WHERE post.userId = ? GROUP BY postId;"
+	db.query(query,
+		[
+			req.params.userId
+		],
+		function(err, result){
+			if(err)return res.send(err);
+			res.send(result);	
+	});
+
+};
+
+

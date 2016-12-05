@@ -22,9 +22,13 @@ module.exports = function(router) {
 	router.get ('/posts/viewPosts', middleware, posts.viewAllPosts);
 	router.get ('/posts/viewSpecificPosts/:postId', middleware, posts.viewSpecificPosts);
 	router.get ('/posts/viewPostsByUser/:userId', middleware, posts.viewPostsByUser);
+	router.get ('/posts/viewPostLikers/:userId', middleware, posts.viewPostLikers);
 	router.post('/posts/createPost', middleware, posts.createPost);
 	router.put ('/posts/updatePost', middleware, posts.updatePost);
 	router.del ('/posts/deletePost', middleware, posts.deletePost);
+
+	//comment routes
+	router.get ('/comment/viewCommentsByPost/:postId', middleware, comment.viewCommentsByPost);
 
 	//users routes
 	router.get ('/users/searchUser/:name', middleware, users.searchUser);
