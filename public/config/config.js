@@ -7,6 +7,7 @@ const url = {
 
 
 const route = {
+	createPost: '/posts/createPost',
     login: '/authentication/login',
     logout: '/account/logout',
     signup: '/accounts/createAccount',

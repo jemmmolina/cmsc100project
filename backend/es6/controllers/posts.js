@@ -43,16 +43,15 @@ exports.viewPostsByUser= function(req, res){	//Get
 
 // Create Post
 exports.createPost = function(req, res){	//Post
-	var query = "INSERT INTO post (userId, postContent, timestamp) VALUES(?,?,?)"
+	var query = "INSERT INTO post (userId, postContent, timestamp) VALUES(?,?,CURRENT_TIMESTAMP)"
 	db.query(query,
 		[
 			req.body.userId,
-			req.body.postContent,
-			req.body.timestamp
+			req.body.postContent
 		],
 		function(err, result){
 			if(err)return res.send(err);
-			res.send("post successfully created");	
+			res.status(200).send({message:'post successfully created'});	
 	});
 
 };
