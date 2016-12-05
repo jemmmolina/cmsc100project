@@ -29,7 +29,7 @@ exports.viewSpecificPosts= function(req, res){	//Get
 
 // View All Posts
 exports.viewPostsByUser= function(req, res){	//Get
-	var query = "SELECT * FROM post WHERE userId=?"
+	var query = "SELECT * FROM post WHERE userId=? ORDER BY timestamp"
 	db.query(query,
 		[
 			req.params.userId

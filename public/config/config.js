@@ -10,6 +10,7 @@ const route = {
     login: '/authentication/login',
     logout: '/account/logout',
     signup: '/accounts/createAccount',
+    getUser: '/users/getCurrentUser'
     //signuplogin: 'accounts/signUpPlusLogin'
 }
  
