@@ -57,7 +57,7 @@
 
   
 
-<main class="grey lighten-2">
+<main class="grey lighten-2" ng-init="getUser()">
     <!-- NAV BAR -->
     <div class="navbar-fixed">
         <nav class="cyan" style="padding-left:25px; padding-right:25px;">
@@ -101,8 +101,8 @@
               <li>
                 <div class="userView light-blue darken-3">
                   <a href="#!user"><img class="circle" src="../assets/images/icon.jpg"></a>
-                  <a href="#!name"><span class="white-text name">Dalekorr</span></a>
-                  <a href="#!email"><span class="white-text email">cccassion1@up.edu.ph</span></a>
+                  <a href="#!name"><span class="white-text name">{{user.username}}</span></a>
+                  <a href="#!email"><span class="white-text email" >{{user.email}}</span></a>
                 </div>
               </li>
               <li><a href="#">Home</a></li>
@@ -122,7 +122,7 @@
             <div class="card">
               <div class="card-image">
                 <img src="../assets/images/1.jpg" style="height:300px;">
-                <span class="card-title"><img src="../assets/images/icon.jpg" style="height:100px; width:100px; border-radius:70px; border:3px solid white;"><h5>Claudine Cassion</h5><h6>cccassion1@up.edu.ph</h6></span>
+                <span class="card-title"><img src="../assets/images/icon.jpg" style="height:100px; width:100px; border-radius:70px; border:3px solid white;"><h5>{{user.name}}</h5><h6>{{user.email}}</h6></span>
               </div>
               <div class="card-content">
                 < INSERT POSTS >

@@ -21,7 +21,7 @@
                 'caseInsensitiveMatch': true
             })
             .when('/profile', {
-                'controller': 'HomeCtrl',
+                'controller': 'ProfileCtrl',
                 'templateUrl': 'views/profile.view.html',
                 'caseInsensitiveMatch': true
             })

@@ -29,7 +29,7 @@ exports.getCurrentUser = function(req, res) {
 		],
 		function(err, result) {
 			if(err)return res.send(err);
-			console.log(result);
+			delete result[0].password;
 			res.send(result);
 
 
