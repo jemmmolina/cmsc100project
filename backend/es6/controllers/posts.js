@@ -43,16 +43,15 @@ exports.viewPostsByUser= function(req, res){	//Get
 
 // Create Post
 exports.createPost = function(req, res){	//Post
-	var query = "INSERT INTO post (userId, postContent, timestamp) VALUES(?,?,?)"
+	var query = "INSERT INTO post (userId, postContent, timestamp) VALUES(?,?,CURRENT_TIMESTAMP)"
 	db.query(query,
 		[
 			req.body.userId,
-			req.body.postContent,
-			req.body.timestamp
+			req.body.postContent
 		],
 		function(err, result){
 			if(err)return res.send(err);
-			res.send("post successfully created");	
+			res.status(200).send({message:'post successfully created'});	
 	});
 
 };
@@ -85,3 +84,18 @@ exports.deletePost = function(req, res){	//Delete
 	});
 
 };
+
+exports.viewPostLikers= function(req, res){	//Get
+	var query = "SELECT postlikers.postId, COUNT(*) FROM postlikers JOIN post ON postlikers.postId = post.postId WHERE post.userId = ? GROUP BY postId;"
+	db.query(query,
+		[
+			req.params.userId
+		],
+		function(err, result){
+			if(err)return res.send(err);
+			res.send(result);	
+	});
+
+};
+
+

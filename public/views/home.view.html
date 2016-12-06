@@ -63,10 +63,10 @@
                 <div class="col s12 m12 l12" style="padding-right:40px;">
                   <div class="card" style="line-height:20px; border-radius:8px;">
                     <div class="card-content">
-                      <form>
+                      <form method="POST" ng-submit="startPost(formData)" ng-data-model="formData">
                         <!--<img src="assets/images/icon.jpg" style="height:35px; border-radius:30px; border:1px solid white; display:inline-block">-->
                         <div class="input-field">
-                          <textarea id="whatsnew" class="materialize-textarea"></textarea>
+                          <textarea id="whatsnew" class="materialize-textarea" ng-model="formData.postContent" ng-init="formData.postContent=''"></textarea>
                           <label for="whatsnew">&nbsp;&nbsp;&nbsp;<i class="tiny material-icons" style="vertical-align:middle;">message</i>&nbsp;&nbsp;&nbsp;What's new with you?</label>
                           <!--<div class="fixed-action-btn horizontal" style="position:relative;">
                             <a class="btn-floating red"><i class="large material-icons">mode_edit</i></a>
@@ -75,7 +75,7 @@
                             <a class="btn-floating green"><i class="material-icons">publish</i></a></li>
                             <a class="btn-floating blue"><i class="material-icons">attach_file</i></a>
                           </div>-->
-                          <button class="btn waves-effect waves-light light-blue darken-3" id="login" action="submit" style="margin-top: 5px;margin-left:84%"><i class="small material-icons right" style="vertical-align:middle;padding:0px;">send</i>POST</button>
+                          <button class="btn waves-effect waves-light light-blue darken-3" id="startPost" action="submit" style="margin-top: 5px;margin-left:84%"><i class="small material-icons right" style="vertical-align:middle;padding:0px;">send</i>POST</button>
                         </div>
                       </form>
                     </div>

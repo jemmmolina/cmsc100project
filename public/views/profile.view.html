@@ -1,5 +1,5 @@
 <link rel="stylesheet" type="text/css" href="../assets/css/custom-profile.css">
-<main class="grey lighten-2" ng-init="getUser()">
+<main class="grey lighten-2" ng-init="onLoad()">
     <!-- NAV BAR -->
     <div class="navbar-fixed">
         <nav class="cyan" style="padding-left:25px; padding-right:25px;">
@@ -66,7 +66,45 @@
                 <span class="card-title"><img src="../assets/images/icon.jpg" style="height:100px; width:100px; border-radius:70px; border:3px solid white;"><h5>{{user.name}}</h5><h6>{{user.email}}</h6></span>
               </div>
               <div class="card-content">
-                < INSERT POSTS >
+                <div class="row">
+                  <div class="col s12 m12 l5">
+                    <div class="card" style="line-height:20px;">
+                      <div class="card-content">
+                          <img src="../assets/images/icon.jpg" style="height:35px; border-radius:30px; border:1px solid white; vertical-align:middle">
+                          <span class="card-title" style="font-size:14px; font-weight:bold; margin:0px;"><a class="" href="">&nbsp;&nbsp;Claudine Cassion</a></span><br>
+                          <!--<span style="font-size:13px; margin:0px;"><a class="" href="#">Claudine Cassion</a></span>-->
+                      </div>
+                      <div class="card-image center">
+                        <hr><span>kahitano</span><br><hr>
+                        <span style="font-size:10px;">2&nbsp;</span>
+                        <a href="#"><i class="tiny material-icons circle" style="color:#424242; background-color:#e0e0e0; padding:8px; margin: 10px 0px 10px 0px;">exposure_plus_1</i></a>
+                        <a href="#"><i class="tiny material-icons circle" style="color:#424242; background-color:#e0e0e0; padding:8px; margin: 10px 0px 10px 0px;">comment</i></a>
+                      </div>
+                      <div class="card-action" style="padding-top:10px; padding-bottom:10px;">
+                        <ul>
+                          <li>
+                            <img src="../assets/images/icon.jpg" style="height:35px; border-radius:30px; border:1px solid white; vertical-align:middle">
+                            <span class="" style="font-size:14px; font-weight:bold; margin:0px;"><a class="black-text" href="">&nbsp;&nbsp;Claudine Cassion</a></span>
+                            <br>
+                            <span style="font-size:10px; margin-left:47px; padding-top:-0px;">This is a sample comment.</span>
+                            <a href="#"><i class="tiny material-icons circle right" style="color:#424242; background-color:#e0e0e0; padding:8px; margin-bottom:10px;">exposure_plus_1</i></a>
+                          </li>
+                          <br>
+                        </ul>
+                        <hr>
+                          <div class="row" style="padding-top:10px;">
+                            <div class="input-field" style="padding-bottom:0px;">
+                            <img src="../assets/images/icon.jpg" style="height:35px; border-radius:30px; border:1px solid white; vertical-align:middle; margin-right:47px;">
+                              <textarea style="margin-left:47px; width:80%;" id="comment" class="materialize-textarea"></textarea>
+                              <label for="comment">&nbsp;&nbsp;&nbsp;<i class="tiny material-icons" style="vertical-align:middle; margin-left:47px;">comment</i>&nbsp;&nbsp;&nbsp;Write a comment...</label>
+                              <!--<button class="btn waves-effect waves-light light-blue darken-3" id="login" action="submit" style="margin-top: 5px;margin-left:65%"><i class="small material-icons right" style="vertical-align:middle;padding:0px;">send</i>POST</button>-->
+                            </div>
+                          </div>
+                        <hr>
+                      </div>
+                    </div>
+                  </div>
+              </div>
               </div>
               <div class="card-action">
               </div>

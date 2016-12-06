@@ -7,10 +7,14 @@ const url = {
 
 
 const route = {
+	createPost: '/posts/createPost',
     login: '/authentication/login',
     logout: '/account/logout',
     signup: '/accounts/createAccount',
-    getUser: '/users/getCurrentUser'
+    getUser: '/users/getCurrentUser',
+    getPosts: '/posts/viewPostsByUser/',
+    getPostLikers: '/posts/viewPostLikers/:userId',
+
     //signuplogin: 'accounts/signUpPlusLogin'
 }
  
