@@ -7,11 +7,13 @@ const url = {
 
 
 const route = {
+	getPosts: '/posts/viewPosts',
 	createPost: '/posts/createPost',
     login: '/authentication/login',
     logout: '/account/logout',
     signup: '/accounts/createAccount',
-    getUser: '/users/getCurrentUser'
+    getUser: '/users/getCurrentUser',
+    getsName: '/users/getUserName/:userId'
     //signuplogin: 'accounts/signUpPlusLogin'
 }
  

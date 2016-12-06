@@ -29,6 +29,7 @@ module.exports = function(router) {
 	//users routes
 	router.get ('/users/searchUser/:name', middleware, users.searchUser);
 	router.get ('/users/getCurrentUser', middleware, users.getCurrentUser);
+	router.get ('/users/getUserName/:userId', middleware, users.getUserName);
 
 	//accounts routes
 	router.post('/accounts/createAccount', accounts.createAccount);

@@ -33,8 +33,29 @@
             return deferred.promise;
         }
 
+
+        const viewAllPosts = () => {
+            
+            let deferred = $q.defer();
+
+            $http({
+                method: 'GET',
+                url: url.backend + route.getPosts,
+                headers: headers,
+                withCredentials: true
+            })
+            .then((res) => {
+                    deferred.resolve(res.data);
+                    console.log(res.data);
+                },(error) => {
+                    deferred.reject(error.data);
+                });
+            return deferred.promise;            
+        }
+
         let service = {};
-        service.createPost = createPost;
+        service.createPost   = createPost;
+        service.viewAllPosts = viewAllPosts
         return service;
     };
 

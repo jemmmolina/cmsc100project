@@ -4,7 +4,7 @@ const db = require(__dirname + '/mysql');
 
 // View All Posts
 exports.viewAllPosts = function(req, res){	//Get
-	var query = "SELECT * FROM post"
+	var query = "SELECT u.name, p.postContent, p.timestamp FROM post p LEFT JOIN user u ON p.userId = u.userId"
 	db.query(query,
 		function(err, result){
 			if(err)return res.send(err);

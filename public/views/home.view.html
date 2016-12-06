@@ -1,5 +1,5 @@
 <link rel="stylesheet" type="text/css" href="../assets/css/custom-home.css">
-<main class="grey lighten-2"> 
+<main class="grey lighten-2" ng-init="viewPost()" > 
     <!-- NAV BAR -->
     <div class="navbar-fixed">
         <nav class="cyan" style="padding-left:25px; padding-right:25px;">
@@ -82,16 +82,23 @@
                   </div>
                 </div>
             </div>
-            <div class="row">
+
+            <!--<div>
+                <ul>
+                    <li ng-repeat="x in posts">{{x.postContent}}</li>
+                </ul>
+            </div>-->
+
+            <div class="row" ng-repeat="x in posts">
                 <div class="col s12 m12 l5">
                   <div class="card" style="line-height:20px;">
                     <div class="card-content">
                         <img src="../assets/images/icon.jpg" style="height:35px; border-radius:30px; border:1px solid white; vertical-align:middle">
-                        <span class="card-title" style="font-size:14px; font-weight:bold; margin:0px;"><a class="" href="" style="margin-right:7px">&nbsp;&nbsp;Claudine Cassion</a></span><span class="" style="font-size:10px;">December 6 at 9:27am</span>
+                        <span class="card-title" style="font-size:14px; font-weight:bold; margin:0px;"><a class="" href="" style="margin-right:7px">&nbsp;&nbsp;{{x.name}}</a></span><span class="" style="font-size:10px;">{{x.timestamp}}</span>
                         <!--<span style="font-size:13px; margin:0px;"><a class="" href="#">Claudine Cassion</a></span>-->
                     </div>
                     <div class="card-image center" style="padding:0px 23px 5px 23px; text-align:left;">
-                      <span>hi</span>
+                      <span>{{x.postContent}}</span>
                       <br>
                       <div align="right" style="margin-bottom:0px;">
                         <span style="font-size:10px;">2&nbsp;</span>

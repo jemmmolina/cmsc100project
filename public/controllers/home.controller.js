@@ -13,6 +13,8 @@
             postContent: '',
         };
         $scope.user;
+        $scope.posts = [];
+        $scope.name = [];
 
         $scope.startPost = (data) => { // login(formData)
 
@@ -28,5 +30,28 @@
 	        		Materialize.toast(error, 3000);
 	        	});
         };
+
+        $scope.viewPost = () => { // login(formData)
+        	HomeService
+        	.viewAllPosts()
+	        	.then((res) => {
+	        		$scope.posts = res;
+	        		//HomeService.getName(res.userid);
+	        	})
+	        	.catch((error) => {
+	        		Materialize.toast(error, 3000);
+	        	});
+        };
+
+        $scope.getName = (userId) => {
+        	HomeService
+        	.getUserName(userId)
+        		.then((res) => {
+	        		$scope.name = res;
+	        	})
+	        	.catch((error) => {
+	        		Materialize.toast(error, 3000);
+	        	});
+        }
     }
 })();

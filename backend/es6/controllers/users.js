@@ -35,3 +35,16 @@ exports.getCurrentUser = function(req, res) {
 
 		});
 };
+
+exports.getUserName = function(req, res) {
+	var query = "SELECT name FROM user WHERE userId = ?"
+	db.query(query,
+		[
+			req.params.userId
+		],
+		function(err, result) {
+			if(err)return res.send(err);
+			delete result[0].password;
+			res.send(result);
+		});
+};
